@@ -1,7 +1,7 @@
 Vagrant for Symphony CMS
 ========================
 
-> Dead-simple development environment intended for Symphony. No mess, no fuss.
+> Dead-simple development environment intended for Symphony. No muss, no fuss.
 
 What’s Vagrant? See [vagrantup.com][1].
 
