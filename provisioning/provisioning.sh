@@ -50,7 +50,7 @@ rm -f /var/www/html/index.html &>> ${LOG}
 echo 'Installing PHP...'
 
 apt-get -qy install php5 php5-xsl php5-curl php5-mysql php5-mcrypt php5-gd \
-                    php5-xdebug &>> ${LOG}
+                    php5-xdebug php-pear &>> ${LOG}
 
 # Enable error reporting
 sed -i 's/display_errors\s*=\s*Off/display_errors = On/g' ${PHP_CONF}
