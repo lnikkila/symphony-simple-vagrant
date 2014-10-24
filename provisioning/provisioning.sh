@@ -49,7 +49,7 @@ rm -f /var/www/html/index.html &>> ${LOG}
 
 echo 'Installing PHP...'
 
-apt-get -qy install php5 php5-xsl php5-curl php5-mysql php5-mcrypt php5-gd\
+apt-get -qy install php5 php5-xsl php5-curl php5-mysql php5-mcrypt php5-gd \
                     php5-xdebug &>> ${LOG}
 
 # Enable error reporting
@@ -72,9 +72,13 @@ apt-get -qy install mariadb-server &>> ${LOG}
 # Access MariaDB from outside the box
 sed -i 's/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/' ${MYSQL_CONF}
 
+# Allow root login from anywhere
+echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' " \
+     "WITH GRANT OPTION" | mysql -u root --password=root &>> ${LOG}
+
 # Create a default database
 echo 'CREATE DATABASE vagrant CHARACTER SET utf8 COLLATE utf8_unicode_ci' \
-     | mysql -u root --password=root
+     | mysql -u root --password=root &>> ${LOG}
 
 echo 'Starting server...'
 
