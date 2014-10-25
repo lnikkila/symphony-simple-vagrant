@@ -18,17 +18,15 @@ Apache is available at [localhost:8080][2] and MariaDB at localhost:3636.
 A default database called `vagrant` is created automatically. The MariaDB root
 password is just `root`.
 
-What’s in the bag
------------------
-
-> DEAD DOVE, do not eat!
+What’s in the [bag](http://i.imgur.com/iDxwDg2l.png)?
+-----------------------------------------------------
 
 - **Ubuntu 14.04 LTS**
 
   Specifically the official `ubuntu/trusty32` box. Go ahead and use the 64-bit
   version if possible.
 
-- **Apache 2**
+- **Apache 2.4**
 
 - **MariaDB 5.5**
 
