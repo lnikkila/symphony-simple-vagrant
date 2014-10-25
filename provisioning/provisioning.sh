@@ -42,7 +42,7 @@ apt-get -qy install apache2 &>> ${LOG}
 
 # Enable URL rewriting globally, doesn't need to be secure
 a2enmod rewrite &>> ${LOG}
-sed -i 's/AllowOverride\s+None/AllowOverride All/g' ${APACHE_CONF}
+sed -Ei 's/AllowOverride\s+None/AllowOverride All/g' ${APACHE_CONF}
 
 # Remove default Apache index page
 rm -f /var/www/html/index.html &>> ${LOG}
