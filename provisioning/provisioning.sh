@@ -16,7 +16,7 @@ XDEBUG_CONF='/etc/php5/mods-available/xdebug.ini'
 MYSQL_CONF='/etc/mysql/my.cnf'
 
 # Clear the log
-> '${LOG}'
+> ${LOG}
 
 # Make sure we're running as root
 sudo su
